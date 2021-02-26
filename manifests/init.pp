@@ -21,9 +21,10 @@ class duo_authproxy (
     $python_version = 'python_version'
   }
 
-  unless versioncmp($facts[$python_version], '2.6') >= 0 {
-    fail("${name} requires at least python version 2.6, you have ${facts[$python_version]}.")
-  }
+  # irako
+  #unless versioncmp($facts[$python_version], '2.6') >= 0 {
+  #  fail("${name} requires at least python version 2.6, you have ${facts[$python_version]}.")
+  #}
 
   contain 'duo_authproxy::install'
   contain 'duo_authproxy::config'

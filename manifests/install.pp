@@ -14,7 +14,9 @@ class duo_authproxy::install {
   $creates_path = "${duo_authproxy::install_dir}/${duo_authproxy::version}"
 
   archive { "/tmp/duoauthproxy-${duo_authproxy::version}-src.tgz":
-    source       => "https://dl.duosecurity.com/duoauthproxy-${duo_authproxy::version}-src.tgz",
+    # irako
+    #source       => "https://dl.duosecurity.com/duoauthproxy-${duo_authproxy::version}-src.tgz",
+    source       => "http://alt-mon.rl.lan/duo_authproxy/duoauthproxy-${duo_authproxy::version}-src.tgz",
     extract      => true,
     extract_path => '/tmp',
     cleanup      => true,
@@ -32,6 +34,8 @@ class duo_authproxy::install {
 
   -> exec { 'duoauthproxy-make':
     command     => 'make > duoauthproxy-make.log',
+    # irako
+    timeout     => 1800,
     cwd         => "/tmp/duoauthproxy-${duo_authproxy::version}-src",
     environment => ['PYTHON=python'],
     path        => $facts['path'],
