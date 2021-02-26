@@ -1,0 +1,44 @@
+---
+.gitlab-ci.yml:
+  delete: true
+appveyor.yml:
+  delete: true
+
+.travis.yml:
+  user: MiamiOH
+  secure: "q1Z0kTbF+De2KKv790sXcCwyHRLrOdQqjQvw+9YzvQRu0esnPoR4khG73VgSy6hSKHK0Wd0enduPMWS1rK9GmV+kMmSbkx8HPQT3bNOAB02n7VT4JEKzFNoPyNSyYydbM/jK3eTRS1GM35Row96gLeaqGfwmnjc0+7dG7y1sdYJib556B07dEqdn6tu9kbQu2l2qOr1uyhfDoQmtAV/duSOT1eFTxTCMsQvqm1LKzIkCwHsb/xU3NNCb9WCFtFnHNKKTJ1PBjmG1Wd19ZBPcYj1o1AGFHwl1waXBehF4jPh+ScCkISi+jG6W624RI1mQgwP66uATsqqpSmb7iIxsOTbbWpF77kMT6GAc09W+oya2jkKYzO2TrwC//0TX9ud51I/RxOuSA4MVIyef8zuMdErC3kBecRzqcF52e1wywyi+iTmKMGD8Iy/fKU5BZoceh1TPk0lpz1bKOWtfRnJ2O8ua5TcMqogikOovEWJFniDhb3dZXmx7NMmNNKhRAlgYdQPO7OTJTvJVadyp8rNWbHChz9cIXd5pIj29jHvKgjBG0j4+WOB+O3gOvyHIVv6ae4r89FK8nFsumbXvHKIZ+fq+jAZc1fAOv56XHf5Xjv9HVpqPbmfIC4kOjiLfouNZdBOf8aeqGhgOTGeTQ/asxxGu2skqF4B+hKU4RiJanh4="
+
+Gemfile:
+  required:
+    ':development':
+      - gem: travis
+    ':puppet_lint':
+      - gem: puppet-lint-absolute_classname-check
+      - gem: puppet-lint-absolute_template_path
+      - gem: puppet-lint-alias-check
+      - gem: puppet-lint-classes_and_types_beginning_with_digits-check
+      - gem: puppet-lint-duplicate_class_parameters-check
+      - gem: puppet-lint-empty_string-check
+      - gem: puppet-lint-extended
+      - gem: puppet-lint-file_ensure-check
+      - gem: puppet-lint-file_source_rights-check
+      - gem: puppet-lint-leading_zero-check
+      - gem: puppet-lint-numericvariable
+      - gem: puppet-lint-resource_reference_syntax
+      - gem: puppet-lint-security-plugins
+      - gem: puppet-lint-spaceship_operator_without_tag-check
+      - gem: puppet-lint-strict_indent-check
+      - gem: puppet-lint-trailing_comma-check
+      - gem: puppet-lint-trailing_newline-check
+      - gem: puppet-lint-undef_in_function-check
+      - gem: puppet-lint-unquoted_string-check
+      - gem: puppet-lint-variable_contains_upcase
+      - gem: puppet-lint-version_comparison-check
+
+Rakefile:
+  default_disabled_lint_checks:
+    - 140chars
+
+spec/default_facts.yml:
+  extra_facts:
+    operatingsystemrelease: 18.04

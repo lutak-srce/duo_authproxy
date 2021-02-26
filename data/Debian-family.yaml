@@ -1,0 +1,6 @@
+---
+duo_authproxy::dep_packages:
+  - build-essential
+  - libssl-dev
+  - python-dev
+  - libffi-dev
