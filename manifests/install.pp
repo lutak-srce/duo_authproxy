@@ -15,8 +15,8 @@ class duo_authproxy::install {
 
   archive { "/tmp/duoauthproxy-${duo_authproxy::version}-src.tgz":
     # irako
-    #source       => "https://dl.duosecurity.com/duoauthproxy-${duo_authproxy::version}-src.tgz",
-    source       => "http://alt-mon.rl.lan/duo_authproxy/duoauthproxy-${duo_authproxy::version}-src.tgz",
+    source       => "https://dl.duosecurity.com/duoauthproxy-${duo_authproxy::version}-src.tgz",
+    #source       => "http://alt-mon.rl.lan/duo_authproxy/duoauthproxy-${duo_authproxy::version}-src.tgz",
     extract      => true,
     extract_path => '/tmp',
     cleanup      => true,
