@@ -10,7 +10,7 @@ class duo_authproxy::install {
 
   ensure_packages($duo_authproxy::dep_packages)
 
-  $inst_cmd = "duoauthproxy-build/install --install-dir ${duo_authproxy::install_dir} --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script yes"
+  $inst_cmd = "duoauthproxy-build/install --install-dir ${duo_authproxy::install_dir} --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script yes --enable-selinux no"
   $creates_path = "${duo_authproxy::install_dir}/${duo_authproxy::version}"
 
   archive { "/tmp/duoauthproxy-${duo_authproxy::version}-src.tgz":
