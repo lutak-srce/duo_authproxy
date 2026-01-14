@@ -1,3 +1,17 @@
 ---
-duo_authproxy::version: 2.7.0
+duo_authproxy::version: 6.5.2
+duo_authproxy::build_dir: /tmp
+duo_authproxy::extract_dir: /tmp
 duo_authproxy::install_dir: /opt/duoauthproxy
+duo_authproxy::install_proto: https
+duo_authproxy::install_src: dl.duosecurity.com
+duo_authproxy::settings:
+  ad_client:
+    transport: ldaps
+    ssl_ca_certs_file: ca-bundle.crt
+    ssl_verify_hostname: true
+  ldap_server_auto:
+    client: ad_client
+    ssl_key_path: "%{::fqdn}.key"
+    ssl_cert_path: "%{::fqdn}.crt"
+    minimum_tls_version: tls1.2

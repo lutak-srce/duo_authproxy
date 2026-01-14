@@ -7,7 +7,6 @@
 # @example
 #   don't use this class directly
 class duo_authproxy::service {
-
   service { 'duoauthproxy':
     ensure     => running,
     enable     => true,

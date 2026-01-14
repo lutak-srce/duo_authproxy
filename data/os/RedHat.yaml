@@ -1,0 +1,10 @@
+---
+duo_authproxy::dep_packages:
+  - gcc
+  - make
+  - openssl-devel
+  - python36-devel
+  - libffi-devel
+  - selinux-policy-devel
+  - chkconfig
+duo_authproxy::python_env: python3

@@ -1,7 +1,0 @@
----
-duo_authproxy::dep_packages:
-  - gcc
-  - make
-  - openssl-devel
-  - python-devel
-  - libffi-devel
